@@ -1,0 +1,40 @@
+{
+  "originName": "Think Synergy Limited",
+  "originVicinity": "Gads Works Building 3rd Floor Off, Mombasa Road, Nairobi",
+  "originFormattedAddress": "Gads Works Building 3rd Floor Off, Mombasa Road, Nairobi, Kenya",
+  "originLatitude": -1.331014,
+  "originLongitude": 36.88120700000002,
+  "scheduleDate": "2018-02-28",
+  "scheduleTime": "22:30",
+  "estimatedCost": 607.668,
+  "estimatedMaxDistance": 8292,
+  "estimatedMaxDuration": 749,
+  "items": [
+    {
+      "destinationName": "Taj Shopping Mall, Embakasi",
+      "destinationVicinity": "Outer Ring Road, Nairobi",
+      "destinationFormattedAddress": "Outer Ring Rd, Nairobi, Kenya",
+      "destinationLatitude": -1.3230104,
+      "destinationLongitude": 36.8989828,
+      "estimatedDistance": 3171,
+      "estimatedDuration": 494,
+      "note": "Note here",
+      "contact": "0723203475",
+      "quantity": "5",
+      "courierOptionId": 2
+    },
+    {
+      "destinationName": "Cube Movers Ltd. Moving Company in Kenya",
+      "destinationVicinity": "Elephant Soap House, Shimo la Tewa Road, Nairobi",
+      "destinationFormattedAddress": "Elephant Soap House, Shimo la Tewa Road, Nairobi, Kenya",
+      "destinationLatitude": -1.305275,
+      "destinationLongitude": 36.82980799999996,
+      "estimatedDistance": 8292,
+      "estimatedDuration": 749,
+      "note": "Note here",
+      "contact": "0723203475",
+      "quantity": "4",
+      "courierOptionId": 1
+    }
+  ]
+}
