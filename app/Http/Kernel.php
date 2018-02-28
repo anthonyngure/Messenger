@@ -19,7 +19,7 @@
 			\App\Http\Middleware\TrimStrings::class,
 			\Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
 			\App\Http\Middleware\TrustProxies::class,
-			\Barryvdh\Cors\HandleCors::class,
+			\Spatie\Cors\Cors::class
 		];
 		
 		/**

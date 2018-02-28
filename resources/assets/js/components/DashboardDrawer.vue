@@ -66,6 +66,7 @@
                 drawerOpen: true,
                 items: [
                     {icon: 'dashboard', title: 'Dashboard', route: 'dashboard'},
+                    {icon: 'date_range', title: 'Subscriptions', route: 'subscriptions'},
                     {icon: 'date_range', title: 'Appointments', route: 'appointments'},
                     {icon: 'folder', title: 'Documents', route: 'documents'},
                     {icon: 'shopping_basket', title: 'Shopping', route: 'shopping'},

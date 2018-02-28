@@ -26,6 +26,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\CourierOption whereUpdatedAt($value)
  * @property string $icon
  * @method static \Illuminate\Database\Eloquent\Builder|\App\CourierOption whereIcon($value)
+ * @property string $plural_name
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\CourierOption wherePluralName($value)
  */
 class CourierOption extends Model
 {

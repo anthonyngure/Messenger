@@ -31,6 +31,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Delivery[] $deliveries
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Client whereAccentColor($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Client wherePrimaryColor($value)
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Subscription[] $subscriptions
  */
 class Client extends Model
 {
@@ -42,5 +43,10 @@ class Client extends Model
 	public function deliveries()
 	{
 		return $this->hasMany(Delivery::class);
+	}
+	
+	public function subscriptions()
+	{
+		return $this->hasManyThrough(Subscription::class, ClientSubscription::class);
 	}
 }

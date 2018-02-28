@@ -51,6 +51,10 @@
  * @property int $quantity
  * @method static \Illuminate\Database\Eloquent\Builder|\App\DeliveryItem whereContact($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\DeliveryItem whereQuantity($value)
+ * @property string $recipient_name
+ * @property string $recipient_contact
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\DeliveryItem whereRecipientContact($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\DeliveryItem whereRecipientName($value)
  */
 	class DeliveryItem extends Model
 	{

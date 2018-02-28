@@ -13,4 +13,4 @@ let mix = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js');
 mix.version();
-mix.browserSync('http://localhost');
+mix.browserSync('http://localhost:8000');

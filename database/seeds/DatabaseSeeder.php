@@ -34,6 +34,7 @@
 			$this->call(ClientsTableSeeder::class);
 			$this->call(UsersTableSeeder::class);
 			$this->call(CourierOptionsTableSeeder::class);
+			$this->call(SubscriptionsTableSeeder::class);
 			
 		}
 	}

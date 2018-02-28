@@ -31,6 +31,7 @@
 			Route::get('auth/refresh', 'AuthController@refresh');
 			Route::get('auth/user', 'AuthController@user');
 			Route::resource('deliveries', 'DeliveryController');
+			Route::resource('subscriptions', 'SubscriptionController');
 		});
 		
 	});

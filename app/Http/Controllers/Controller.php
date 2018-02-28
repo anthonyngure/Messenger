@@ -2,6 +2,9 @@
 	
 	namespace App\Http\Controllers;
 	
+	use App\Client;
+	use App\Exceptions\WrappedException;
+	use Auth;
 	use Fractal;
 	use Illuminate\Database\Eloquent\Collection;
 	use Illuminate\Database\Eloquent\Model;
@@ -14,6 +17,19 @@
 	class Controller extends BaseController
 	{
 		use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+		
+		/**
+		 * @throws \App\Exceptions\WrappedException
+		 * @return \App\Client
+		 */
+		protected function getClient()
+		{
+			$client = Client::find(Auth::user()->client_id);
+			if (is_null($client)) {
+				throw new WrappedException("Sorry, you are not associated to any client.");
+			}
+			return $client;
+		}
 		
 		/**
 		 * @param Model               $item

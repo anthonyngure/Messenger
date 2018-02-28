@@ -44,14 +44,15 @@ class DeliveryController extends Controller
     {
         //
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     * @throws WrappedException
-     */
+	
+	/**
+	 * Store a newly created resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request $request
+	 * @return \Illuminate\Http\Response
+	 * @throws WrappedException
+	 * @throws \Illuminate\Validation\ValidationException
+	 */
     public function store(Request $request)
     {
         $client = Client::find(Auth::user()->client_id);

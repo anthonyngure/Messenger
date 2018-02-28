@@ -1,5 +1,5 @@
 <template>
-    <v-toolbar color="primary" fixed dense dark app clipped-left>
+    <v-toolbar color="primary" fixed dense dark app flat clipped-left>
         <v-toolbar-side-icon></v-toolbar-side-icon>
         <v-avatar size="36px" v-if="$auth.check() && $auth.user().client">
             <img :src="'/storage/'+$auth.user().client.logo" alt="Logo">
