@@ -5970,13 +5970,215 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	name: 'subscriptions',
 	data: function data() {
 		return {
-			currentItem: null
+			connecting: false,
+			subscribeItemDialog: false,
+			currentItem: null,
+			subscribeItem: null,
+			subscribeItemQuantity: null,
+			everydayCheckbox: false,
+			subscriptions: [],
+			headers: [{
+				text: 'Name',
+				align: 'left',
+				sortable: false,
+				value: 'name'
+			}, { text: 'Quantity Subscribed', sortable: false, value: '' }, { text: 'Subscription Date', sortable: false, value: '' }, { text: 'Total Deliveries', sortable: false, value: '' }, { text: 'Total Cost', sortable: false, value: '' }, { text: 'Subscription', sortable: false, value: '' }],
+			weekdays: [{ name: 'Monday', description: 'Deliver on monday', selected: false }, { name: 'Tuesday ', description: 'Deliver on Tuesday', selected: false }, { name: 'Wednesday', description: 'Deliver on Wednesday', selected: false }, { name: 'Thursday', description: 'Deliver on Thursday', selected: false }, { name: 'Friday', description: 'Deliver on Friday', selected: false }]
 		};
+	},
+
+	watch: {
+		currentItem: function currentItem(_currentItem) {
+			if (_currentItem && !this.connecting) {
+				this.loadSubscriptions();
+			}
+		},
+		subscribeItem: function subscribeItem(_subscribeItem) {
+			this.subscribeItemDialog = !!_subscribeItem;
+		},
+		everydayCheckbox: function everydayCheckbox(_everydayCheckbox) {
+			if (_everydayCheckbox) {
+				var _iteratorNormalCompletion = true;
+				var _didIteratorError = false;
+				var _iteratorError = undefined;
+
+				try {
+					for (var _iterator = this.weekdays[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+						var weekday = _step.value;
+
+						weekday.selected = false;
+					}
+				} catch (err) {
+					_didIteratorError = true;
+					_iteratorError = err;
+				} finally {
+					try {
+						if (!_iteratorNormalCompletion && _iterator.return) {
+							_iterator.return();
+						}
+					} finally {
+						if (_didIteratorError) {
+							throw _iteratorError;
+						}
+					}
+				}
+			}
+		},
+		weekdays: function weekdays(_weekdays) {
+			this.$utils.log(_weekdays);
+			var selected = 0;
+			var _iteratorNormalCompletion2 = true;
+			var _didIteratorError2 = false;
+			var _iteratorError2 = undefined;
+
+			try {
+				for (var _iterator2 = _weekdays[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+					var weekday = _step2.value;
+
+					if (weekday.selected) {
+						selected = selected + 1;
+					}
+				}
+			} catch (err) {
+				_didIteratorError2 = true;
+				_iteratorError2 = err;
+			} finally {
+				try {
+					if (!_iteratorNormalCompletion2 && _iterator2.return) {
+						_iterator2.return();
+					}
+				} finally {
+					if (_didIteratorError2) {
+						throw _iteratorError2;
+					}
+				}
+			}
+
+			if (selected === 5) {
+				this.everydayCheckbox = true;
+			}
+		}
+	},
+	methods: {
+		loadSubscriptions: function loadSubscriptions() {
+			var _this = this;
+
+			this.axios.get('/subscriptions', {
+				params: {
+					filter: this.currentItem
+				}
+			}).then(function (response) {
+				if (response.data) {
+					_this.subscriptions = [];
+					var _iteratorNormalCompletion3 = true;
+					var _didIteratorError3 = false;
+					var _iteratorError3 = undefined;
+
+					try {
+						for (var _iterator3 = response.data.data[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+							var item = _step3.value;
+
+							_this.subscriptions.push(item);
+						}
+					} catch (err) {
+						_didIteratorError3 = true;
+						_iteratorError3 = err;
+					} finally {
+						try {
+							if (!_iteratorNormalCompletion3 && _iterator3.return) {
+								_iterator3.return();
+							}
+						} finally {
+							if (_didIteratorError3) {
+								throw _iteratorError3;
+							}
+						}
+					}
+				}
+			}).catch(function (error) {});
+		}
+	},
+	mounted: function mounted() {
+		this.currentItem = 'newspaper';
 	}
 });
 
@@ -37241,7 +37443,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -66035,7 +66237,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "v-layout",
-    { staticStyle: { margin: "0" }, attrs: { row: "", wrap: "" } },
+    { attrs: { row: "", wrap: "" } },
     [
       _c(
         "v-flex",
@@ -66054,9 +66256,291 @@ var render = function() {
               }
             },
             [
-              _c("v-tab", [_vm._v("News Papers")]),
+              _c("v-tab", { attrs: { href: "#newspaper" } }, [
+                _vm._v("News Papers")
+              ]),
               _vm._v(" "),
-              _c("v-tab", [_vm._v("Milk")])
+              _c("v-tab", { attrs: { href: "#milk" } }, [_vm._v("Milk")])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("v-data-table", {
+            staticClass: "elevation-2",
+            attrs: {
+              headers: _vm.headers,
+              items: _vm.subscriptions,
+              "hide-actions": ""
+            },
+            scopedSlots: _vm._u([
+              {
+                key: "items",
+                fn: function(props) {
+                  return [
+                    _c("td", [_vm._v(_vm._s(props.item.name))]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "text-xs-center" }, [
+                      _vm._v(
+                        _vm._s(
+                          props.item.clientSubscription
+                            ? props.item.clientSubscription.quantity
+                            : "N/A"
+                        ) + "\n                "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "text-xs-center" }, [
+                      _vm._v(
+                        _vm._s(
+                          props.item.clientSubscription
+                            ? props.item.clientSubscription.quantity
+                            : "N/A"
+                        ) + "\n                "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "text-xs-center" }, [
+                      _vm._v(
+                        _vm._s(
+                          props.item.clientSubscription
+                            ? props.item.clientSubscription.quantity
+                            : "N/A"
+                        ) + "\n                "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "text-xs-center" }, [
+                      _vm._v(
+                        _vm._s(
+                          props.item.clientSubscription
+                            ? props.item.clientSubscription.quantity
+                            : "N/A"
+                        ) + "\n                "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "td",
+                      { staticClass: "text-xs-center" },
+                      [
+                        props.item.clientSubscription
+                          ? _c(
+                              "v-btn",
+                              {
+                                attrs: { small: "", outline: "", color: "red" }
+                              },
+                              [_vm._v("Unsubscribe\n                    ")]
+                            )
+                          : _c(
+                              "v-btn",
+                              {
+                                attrs: {
+                                  small: "",
+                                  outline: "",
+                                  color: "primary"
+                                },
+                                nativeOn: {
+                                  click: function($event) {
+                                    _vm.subscribeItem = props.item
+                                  }
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                        Subscribe\n                    "
+                                )
+                              ]
+                            )
+                      ],
+                      1
+                    )
+                  ]
+                }
+              }
+            ])
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-flex",
+        { attrs: { xs12: "" } },
+        [
+          _c(
+            "v-dialog",
+            {
+              attrs: { "max-width": "500px" },
+              model: {
+                value: _vm.subscribeItemDialog,
+                callback: function($$v) {
+                  _vm.subscribeItemDialog = $$v
+                },
+                expression: "subscribeItemDialog"
+              }
+            },
+            [
+              _vm.subscribeItem
+                ? _c(
+                    "v-card",
+                    [
+                      _c("v-card-title", [
+                        _c("span", [
+                          _vm._v("Subscribe to "),
+                          _c("b", [_vm._v(_vm._s(_vm.subscribeItem.name))])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "v-card-text",
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              required: "",
+                              label: "Enter quantity",
+                              placeholder: "Quantity to be delivered to you"
+                            },
+                            model: {
+                              value: _vm.subscribeItemQuantity,
+                              callback: function($$v) {
+                                _vm.subscribeItemQuantity = $$v
+                              },
+                              expression: "subscribeItemQuantity"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "v-list",
+                            { attrs: { subheader: "", dense: "" } },
+                            [
+                              _c("v-subheader", [_vm._v("Deliver everyday")]),
+                              _vm._v(" "),
+                              _c(
+                                "v-list-tile",
+                                [
+                                  _c(
+                                    "v-list-tile-content",
+                                    [
+                                      _c("v-list-tile-title", [
+                                        _vm._v("Everyday")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("v-list-tile-sub-title", [
+                                        _vm._v("Deliver everyday")
+                                      ])
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-list-tile-action",
+                                    [
+                                      _c("v-checkbox", {
+                                        model: {
+                                          value: _vm.everydayCheckbox,
+                                          callback: function($$v) {
+                                            _vm.everydayCheckbox = $$v
+                                          },
+                                          expression: "everydayCheckbox"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c("v-divider", { staticClass: "mt-2" }),
+                              _vm._v(" "),
+                              _c("v-subheader", [
+                                _vm._v("Deliver on specific day(s)")
+                              ]),
+                              _vm._v(" "),
+                              _vm._l(_vm.weekdays, function(item) {
+                                return _c(
+                                  "v-list-tile",
+                                  { key: item.name, attrs: { avatar: "" } },
+                                  [
+                                    _c(
+                                      "v-list-tile-content",
+                                      [
+                                        _c("v-list-tile-title", [
+                                          _vm._v(_vm._s(item.name))
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("v-list-tile-sub-title", [
+                                          _vm._v(_vm._s(item.description))
+                                        ])
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-list-tile-action",
+                                      [
+                                        _c("v-checkbox", {
+                                          model: {
+                                            value: item.selected,
+                                            callback: function($$v) {
+                                              _vm.$set(item, "selected", $$v)
+                                            },
+                                            expression: "item.selected"
+                                          }
+                                        })
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                )
+                              })
+                            ],
+                            2
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-card-actions",
+                        [
+                          _c("v-spacer"),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: { color: "primary", flat: "" },
+                              on: {
+                                click: function($event) {
+                                  $event.stopPropagation()
+                                  _vm.subscribeItem = null
+                                }
+                              }
+                            },
+                            [_vm._v("Cancel")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: { color: "primary" },
+                              on: {
+                                click: function($event) {
+                                  $event.stopPropagation()
+                                  _vm.subscribeItem = null
+                                }
+                              }
+                            },
+                            [_vm._v("Continue")]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                : _vm._e()
             ],
             1
           )
