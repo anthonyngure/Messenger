@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "70147efdc5509cd25bdf5f9ae59994ed",
+    "content-hash": "297b73770fb5f58521a1ccf782bfbdd2",
     "packages": [
         {
             "name": "arrilot/laravel-widgets",
@@ -2964,65 +2964,6 @@
                 "transform"
             ],
             "time": "2017-09-08T08:26:54+00:00"
-        },
-        {
-            "name": "spatie/laravel-cors",
-            "version": "1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/laravel-cors.git",
-                "reference": "5cb8ae5c3b201c5b34fb282e8a6a2fb4eb11dbfb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-cors/zipball/5cb8ae5c3b201c5b34fb282e8a6a2fb4eb11dbfb",
-                "reference": "5cb8ae5c3b201c5b34fb282e8a6a2fb4eb11dbfb",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "5.5.*|5.6.*",
-                "php": "^7.0"
-            },
-            "require-dev": {
-                "orchestra/testbench": "3.5.*|3.6.*",
-                "phpunit/phpunit": "^6.5.4|^7.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Spatie\\Cors\\CorsServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\Cors\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Send CORS headers in a Laravel or Lumen application",
-            "homepage": "https://github.com/spatie/laravel-cors",
-            "keywords": [
-                "ajax",
-                "api",
-                "cors",
-                "laravel-cors",
-                "request",
-                "spatie"
-            ],
-            "time": "2018-02-12T15:57:51+00:00"
         },
         {
             "name": "spatie/laravel-fractal",

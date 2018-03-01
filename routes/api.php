@@ -16,7 +16,7 @@
 	
 	Route::group(['prefix' => 'v1', 'guard' => 'api'], function () {
 
-	    Route::get('/', function (){
+	    Route::get('/test', function (){
 	       return response('Cube Messenger API Version 1');
         });
 		
